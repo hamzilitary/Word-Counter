@@ -5,3 +5,6 @@ using WordCounters.Controllers;
 using WordCounters.Models;
 
 namespace WordCounters.Tests
+{
+  
+}

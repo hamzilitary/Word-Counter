@@ -9,10 +9,11 @@ namespace WordCounters.Models
     private string _find;
     private string _result;
 
-    public WordCounter(string text, string find)
+    public WordCounter(string text, string find, string result)
     {
       _text = text;
       _find = find;
+      _result = result;
     }
 
     public string GetText()
