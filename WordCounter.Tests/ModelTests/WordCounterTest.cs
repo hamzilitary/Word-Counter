@@ -33,5 +33,18 @@ namespace WordCounters.Tests
       //Assert
       Assert.AreEqual("Cool", result);
     }
+
+    [TestMethod]
+    public void GetIndex_ReturnIndex()
+    {
+      //Arrange
+      WordCounter wordCounter = new WordCounter("Crazy", "Cool", "Nice");
+
+      //Act
+      int result = wordCounter.GetIndex(0);
+
+      //Assert
+      Assert.AreEqual(-1, result);
+    }
   }
 }
