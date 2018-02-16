@@ -7,13 +7,15 @@ namespace WordCounters.Models
   {
     private string _text;
     private string _find;
+    private string _replace;
     private string _result;
 
-    public WordCounter(string text, string find, string result)
+    public WordCounter(string text, string find, string replace)
     {
       _text = text;
       _find = find;
-      _result = result;
+      _replace = "<span class = 'red'>" + replace + "</span>";
+
     }
 
     public string GetText()
@@ -24,6 +26,10 @@ namespace WordCounters.Models
     {
       return _find;
     }
+    public string GetReplace()
+    {
+      return _replace;
+    }
     public string GetResult()
     {
       return _result;
@@ -32,6 +38,25 @@ namespace WordCounters.Models
     {
       string text = _text.Substring(start, _text.Length - start).ToLower();
       return text.IndexOf(_find.ToLower()) + start;
+    }
+
+    public void ReplaceAll()
+    {
+      string newText = "";
+      int lastIndex = 0;
+      while (true)
+      {
+        int index = GetIndex(lastIndex);
+        if(index < lastIndex)
+        {
+          break;
+        }
+        newText += _text.Substring(lastIndex, index - lastIndex) + _replace;
+        lastIndex = index + _find.Length;
+      }
+      newText += _text.Substring(lastIndex, _text.Length - lastIndex);
+      _result = newText;
+
     }
 
   }

@@ -1,7 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WordCounters;
 using WordCounters.Models;
-using System.Collections.Generic;
 
 namespace WordCounters.Tests
 {
@@ -35,6 +33,19 @@ namespace WordCounters.Tests
     }
 
     [TestMethod]
+    public void GetReplace_ConstructorTest()
+    {
+      //Act
+      WordCounter wordCounter = new WordCounter("Crazy", "Cool", "Nice");
+
+      //Act
+      string result = wordCounter.GetReplace();
+
+      //Assert
+      Assert.AreEqual("Awesome", result);
+    }
+
+    [TestMethod]
     public void GetIndex_ReturnIndex()
     {
       //Arrange
@@ -46,5 +57,19 @@ namespace WordCounters.Tests
       //Assert
       Assert.AreEqual(-1, result);
     }
+
+    [TestMethod]
+    public void ReplaceAll_ReplaceAllOccurencesOfFind()
+    {
+      //Arrange
+      WordCounter wordCounter = new WordCounter("Crazy", "Cool", "Nice");
+
+      //Act
+      string result = wordCounter.ReplaceAll();
+
+      //Assert
+      Assert.AreEqual("Awesome", result);
+    }
+
   }
 }
