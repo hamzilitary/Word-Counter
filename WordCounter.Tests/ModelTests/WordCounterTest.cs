@@ -20,5 +20,18 @@ namespace WordCounters.Tests
       //Assert
       Assert.AreEqual("Crazy", result);
     }
+
+    [TestMethod]
+    public void GetFind_ConstructorTest()
+    {
+      //Arrange
+      WordCounter wordCounter = new WordCounter("Crazy", "Cool", "Nice");
+
+      //Act
+      string result = wordCounter.GetFind();
+
+      //Assert
+      Assert.AreEqual("Cool", result);
+    }
   }
 }
