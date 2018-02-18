@@ -5,10 +5,19 @@ namespace WordCounters.Models
 {
   public class WordCounter
   {
+    //public string Text { get; set; }
+
+//    public string Result {
+//      get {
+//        return GetResult();
+//      }
+//    }
+
     private string _text;
     private string _find;
     private string _replace;
     private string _result;
+//    public WordCounter() {}
 
     public WordCounter(string text, string find, string replace)
     {
@@ -36,8 +45,13 @@ namespace WordCounters.Models
     }
     public int GetIndex(int start)
     {
+      //return _text.ToLower().IndexOf(_find.ToLower());
       string text = _text.Substring(start, _text.Length - start).ToLower();
       return text.IndexOf(_find.ToLower()) + start;
+    }
+
+    public int CountWordInstances() {
+      return _text.ToLower().Split(new [] { _find.ToLower() }, StringSplitOptions.None).Length - 1;
     }
 
     public void ReplaceAll()
