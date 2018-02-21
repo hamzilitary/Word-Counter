@@ -10,12 +10,6 @@
   <h4>You wanted to find all:</h4>
   <p>@Model.GetFind()</p><br>
 
-  <h4>...and replace it with:</h4>
-  <p>@Html.Raw(@Model.GetReplace())</p><br>
-
-  <h4>Your Result:</h4>
-  <p>@Html.Raw(@Model.GetResult())</p>
-
   <h4>Your string contained the find text</h4>
   <p>@Model.CountWordInstances() times.</p>
 

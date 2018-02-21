@@ -21,9 +21,8 @@ namespace WordCounters.Controllers
       //otherResult.Text = "";
       string text = Request.Form["text"];
       string find = Request.Form["find"];
-      string replace = Request.Form["replace"];
-      WordCounter newFind = new WordCounter(text, find, replace);
-      newFind.ReplaceAll();
+      WordCounter newFind = new WordCounter(text, find);
+      newFind.CountWordInstances();
       return View(newFind);
     }
   }

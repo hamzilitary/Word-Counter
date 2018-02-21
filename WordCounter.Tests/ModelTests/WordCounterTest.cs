@@ -10,7 +10,7 @@ namespace WordCounters.Tests
     public void GetText_ConstructorTest()
     {
       //Arrange
-      WordCounter wordCounter = new WordCounter("Crazy", "Cool", "Nice");
+      WordCounter wordCounter = new WordCounter("Crazy", "Cool");
 
       //Act
       string result = wordCounter.GetText();
@@ -23,7 +23,7 @@ namespace WordCounters.Tests
     public void GetFind_ConstructorTest()
     {
       //Arrange
-      WordCounter wordCounter = new WordCounter("Crazy", "Cool", "Nice");
+      WordCounter wordCounter = new WordCounter("Crazy", "Cool");
 
       //Act
       string result = wordCounter.GetFind();
@@ -32,43 +32,18 @@ namespace WordCounters.Tests
       Assert.AreEqual("Cool", result);
     }
 
-    [TestMethod]
-    public void GetReplace_ConstructorTest()
-    {
-      //Act
-      WordCounter wordCounter = new WordCounter("Crazy", "Cool", "Nice");
-
-      //Act
-      string result = wordCounter.GetReplace();
-
-      //Assert
-      Assert.AreEqual("Awesome", result);
-    }
 
     [TestMethod]
     public void GetIndex_ReturnIndex()
     {
       //Arrange
-      WordCounter wordCounter = new WordCounter("Crazy", "Cool", "Nice");
+      WordCounter wordCounter = new WordCounter("Crazy", "Cool");
 
       //Act
       int result = wordCounter.GetIndex(0);
 
       //Assert
       Assert.AreEqual(-1, result);
-    }
-
-    [TestMethod]
-    public void ReplaceAll_ReplaceAllOccurencesOfFind()
-    {
-      //Arrange
-      WordCounter wordCounter = new WordCounter("Crazy", "Cool", "Nice");
-
-      //Act
-      string result = wordCounter.ReplaceAll();
-
-      //Assert
-      Assert.AreEqual("Awesome", result);
     }
 
   }
