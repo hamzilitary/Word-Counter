@@ -20,7 +20,7 @@ _{Takes input from a user, a word to find, and finds that word among a longer st
 * _Take input from the user_
 * _Example: Text: "This is a really really wordy example"_
 * _String to find: "really"_
-* _RepeatCounter() to list the frequency_
+* _WordCountInstances() to list the frequency_
 * _Recognize the number of each occurrence of the specified string in the total text._
 * _Example Input: Text: "This is a really really wordy example"_
 * _String to find: "really"
