@@ -43,9 +43,22 @@ namespace WordCounters.Models
     }
 
     public int CountWordInstances() {
-      return _text.ToLower().Split(new [] { _find.ToLower() }, StringSplitOptions.None).Length - 1;
+      //return _text.ToLower().Split(new [] { _find.ToLower() }, StringSplitOptions.None).Length - 1;
+      var words = _text.ToLower().Split(" ,.!?".ToCharArray());
+      int result = 0;
+      string lowerCaseFind = _find.ToLower();
+      for(int i = 0; i < words.Length; i++)
+      {
+        if (words[i] == _find)
+        {
+          result++;
+        }
+
+      }
+      return result;
     }
 
-  
+
+
   }
 }

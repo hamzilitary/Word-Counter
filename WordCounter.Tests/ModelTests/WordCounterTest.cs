@@ -46,5 +46,33 @@ namespace WordCounters.Tests
       Assert.AreEqual(-1, result);
     }
 
+    [TestMethod]
+    public void DoesNotMatchPartialWordTest()
+    {
+      //Arrange
+      WordCounter wordCounter = new WordCounter("Hello how are you?", "ow");
+
+      //Act
+      int result = wordCounter.CountWordInstances();
+
+      //Assert
+      Assert.AreEqual(0, result);
+
+    }
+    [TestMethod]
+    public void DoesMatchFullWordTest()
+    {
+      //Arrange
+      WordCounter wordCounter = new WordCounter("Hello how are you? How did I pass this?", "how");
+
+      //Act
+      int result = wordCounter.CountWordInstances();
+
+      //Assert
+      Assert.AreEqual(2, result);
+
+    }
+
+
   }
 }
